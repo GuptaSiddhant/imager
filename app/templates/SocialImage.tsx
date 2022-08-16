@@ -1,28 +1,34 @@
-import type { LoaderFunction } from "@remix-run/server-runtime";
-import { createElement, Fragment } from "react";
-import { renderCanvas, Text, View } from "recanvas";
+import { Text, View } from "recanvas";
 
-export const loader: LoaderFunction = async ({ request }) => {
-  const { searchParams, origin } = new URL(request.url);
+export interface SocialImageProps {
+  title: string;
+  url: string;
+  subtitle?: string;
+  caption?: string;
+  imageUrl?: string;
+  height: number;
+  width: number;
+  textColor: string;
+  backgroundColor: string;
+  borderColor: string;
+}
 
-  const title = searchParams.get("title");
-  if (!title) return new Response("title is required", { status: 400 });
-
-  const url = searchParams.get("url") || origin;
-  const caption = searchParams.get("caption") || undefined;
-  const subtitle = searchParams.get("subtitle") || undefined;
-  const imageUrl = searchParams.get("imageUrl") || undefined;
-  const textColor = searchParams.get("textColor") || "#FFFFFF";
-  const backgroundColor = searchParams.get("backgroundColor") || "#171717";
-  const borderColor = searchParams.get("borderColor") || "#000000";
-
-  const width = 800;
-  const height = width * (9 / 16);
+export default function SocialImage({
+  title,
+  subtitle,
+  url,
+  caption,
+  imageUrl,
+  width,
+  textColor,
+  backgroundColor,
+  borderColor,
+}: SocialImageProps): JSX.Element {
   const color = textColor;
   const padding = width / 40;
   const fontSize = width / 40;
 
-  const element = (
+  return (
     <View
       style={{
         flexDirection: "row",
@@ -58,31 +64,6 @@ export const loader: LoaderFunction = async ({ request }) => {
       <ImageView padding={padding} src={imageUrl} fontSize={fontSize} />
     </View>
   );
-
-  return recanvasRequest(element, width, height);
-};
-
-export function CatchBoundary() {}
-
-//
-
-function recanvasRequest(element: React.ReactNode, width = 800, height = 450) {
-  const canvas = renderCanvas(
-    createElement(Fragment, null, element),
-    {
-      width,
-      height,
-    },
-    {}
-  );
-
-  return new Response(canvas.toBuffer(), {
-    status: 200,
-    headers: {
-      "Content-Type": "image/png",
-      "Cache-Control": "s-maxage=31536000, stale-while-revalidate",
-    },
-  });
 }
 
 function TitleView({
