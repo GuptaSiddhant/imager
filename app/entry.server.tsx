@@ -16,7 +16,7 @@ function setupVercel() {
   }
 }
 
-setupVercel();
+// setupVercel();
 
 export default function handleRequest(
   request: Request,
