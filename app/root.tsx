@@ -21,8 +21,16 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body style={{ padding: 0, margin: 0, fontFamily: "sans-serif" }}>
+        <header style={{ textAlign: "center", marginBottom: "2rem" }}>
+          <h1>Imager</h1>
+          <p>Generate images with canvas on server</p>
+        </header>
         <Outlet />
+        <footer style={{ textAlign: "center", marginTop: "2rem" }}>
+          © {new Date().getFullYear()} GuptaSiddhant |{" "}
+          <a href="https://github.com/GuptaSiddhant/imager">GitHub</a>
+        </footer>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
