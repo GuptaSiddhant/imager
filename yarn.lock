@@ -1778,6 +1778,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@remix-run/netlify@npm:^1.6.8":
+  version: 1.6.8
+  resolution: "@remix-run/netlify@npm:1.6.8"
+  dependencies:
+    "@remix-run/node": 1.6.8
+  peerDependencies:
+    "@netlify/functions": ^0.10.0 || ^0.11.0 || ^1.0.0
+  checksum: 42b54d6421171171460076b520d54536fc1c94ad9861ef62e7e6a2d1765eef9e28ecf5f0802894a0be134e849e021b35cd56c5ec0f174df0d525091a260bc6be
+  languageName: node
+  linkType: hard
+
 "@remix-run/node@npm:1.6.8, @remix-run/node@npm:^1.6.8":
   version: 1.6.8
   resolution: "@remix-run/node@npm:1.6.8"
@@ -1838,17 +1849,6 @@ __metadata:
     react: ">=16.8"
     react-dom: ">=16.8"
   checksum: 01a5b17f47a3a10141ab185b0e116ab9d300e82bfa97e1bf6178a625582fa39d9aca8e1d766883a35de56b764b0760d1924df0019a1c310b944db0924260a5e8
-  languageName: node
-  linkType: hard
-
-"@remix-run/vercel@npm:^1.6.8":
-  version: 1.6.8
-  resolution: "@remix-run/vercel@npm:1.6.8"
-  dependencies:
-    "@remix-run/node": 1.6.8
-  peerDependencies:
-    "@vercel/node": ^1.8.3 || ^2.4.0
-  checksum: 523bd4cf3a5df70928230b71dc6248d7a9456ea3ca83cb0bcc8d2369fc802e24604b7b90867894b57b087e0fc08d4c4317c6d8d9fb49e6b22da164fea86b752b
   languageName: node
   linkType: hard
 
@@ -8646,10 +8646,10 @@ __metadata:
   dependencies:
     "@remix-run/dev": ^1.6.8
     "@remix-run/eslint-config": ^1.6.8
+    "@remix-run/netlify": ^1.6.8
     "@remix-run/node": ^1.6.8
     "@remix-run/react": ^1.6.8
     "@remix-run/serve": ^1.6.8
-    "@remix-run/vercel": ^1.6.8
     "@types/react": ^18.0.15
     "@types/react-dom": ^18.0.6
     "@vercel/node": ^2.4.4
