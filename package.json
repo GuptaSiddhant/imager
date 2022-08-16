@@ -10,9 +10,9 @@
     "@remix-run/react": "^1.6.8",
     "@remix-run/vercel": "^1.6.8",
     "@vercel/node": "^2.4.4",
-    "recanvas": "^0.1.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "recanvas": "^0.1.7"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.6.8",
@@ -25,5 +25,6 @@
   },
   "engines": {
     "node": ">=16"
-  }
+  },
+  "packageManager": "yarn@3.2.2"
 }

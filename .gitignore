@@ -9,3 +9,11 @@ node_modules
 /public/build
 /api/index.js
 /api/index.js.map
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
